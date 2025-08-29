@@ -11,14 +11,18 @@ export const weddingData = {
   },
 
   // 👨‍👩‍👧‍👦 Información de los padres
-  parents: {
-    bride: {
-      mother: "Berenice Penélope García Sánchez",
-      father: "Jorge Valencia Andrade"
+  dataParents: {
+    parents: {
+      father: "Luis Gabriel Villa García",
+      mother: "Maria Cruz Salas Ramírez"
     },
-    groom: {
-      mother: "Karen Corpus",
-      father: "Hugo Lizagarra"
+    grandparents: {
+      grandmother: "Ma. De Lourdes Ramirez Álvarez",
+      grandfather: "Francisco Contreras Nery"
+    },
+    godparents: {
+      godmother: "María de Jesús Guerrero Estrada",
+      godfather: "Juan Francisco Piedra Rodríguez"
     },
     message: "A mis queridos padres: Gracias por darme la vida, por cuidarme, guiarme y acompañarme hasta este día tan especial. Su amor incondicional y su ejemplo han sido los pilares fundamentales de mi crecimiento. En mis quince años, ustedes han sido mi fortaleza y mi inspiración. Con ustedes a mi lado, comienzo esta nueva etapa de mi vida llena de ilusión, sueños y esperanzas. Su presencia hace que este momento sea aún más significativo y emotivo. Los amo profundamente."
   },

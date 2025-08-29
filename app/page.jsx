@@ -3,7 +3,7 @@
 //import { useState } from "react"
 
 
-//import AudioPlayer from "../components/AudioPlayer"
+import AudioPlayer from "../components/AudioPlayer"
 import BasicCTA from "../components/sections/BasicCTA"
 import {BasicHero, BasicCountdown, BasicEventDetails, BasicGiftOptions, BasicAttendance } from "@/components/sections/basic"
 import ParentsSection from "../components/sections/ParentsSection"
@@ -53,7 +53,7 @@ export default function WeddingInvitation() {
       <BasicCTA />
       
       {/* 🎵 Reproductor de audio fijo */}
-      {/* <AudioPlayer /> */}
+       <AudioPlayer /> 
     </div>
   )
 }

@@ -6,12 +6,12 @@ import { weddingData } from "../../data/weddingData";
 import { useInView } from "framer-motion";
 
 export default function ParentsSection() {
-  const { parents } = weddingData;
+  const { dataParents } = weddingData;
+  const { parents, grandparents, godparents } = dataParents;
   const myref = useRef<HTMLDivElement>(null);
   const isInView = useInView(myref, { once: true, amount: 0.3 });
 
-  const completeClass =
-    "font-script text-3xl text-secondary mb-4";
+  const completeClass = "font-script text-3xl text-secondary mb-4";
 
   return (
     <section
@@ -34,28 +34,36 @@ export default function ParentsSection() {
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <p className="text-lg text-muted-foreground italic max-w-2xl mx-auto leading-relaxed">
-          {parents.message}
+        <p className="text-lg text-muted-foreground italic max-w-2xl mx-auto leading-relaxed mb-6">
+          {dataParents.message}
         </p>
 
         <div className="space-y-8">
           <div>
             <h3 className={completeClass}>Mis papás</h3>
             <div className="space-y-2">
-              <p className="text-xl font-medium">{parents.bride.mother}</p>
-              <p className="text-xl font-medium">{parents.bride.father}</p>
+              <p className="text-xl font-medium">{parents.mother}</p>
+              <p className="text-xl font-medium">{parents.father}</p>
             </div>
           </div>
-
-          {/* <div>
-                  <h3 className="font-script text-3xl text-secondary mb-4">
-                    Papás del novio
-                  </h3>
-                  <div className="space-y-2">
-                    <p className="text-xl font-medium">{parents.groom.mother}</p>
-                    <p className="text-xl font-medium">{parents.groom.father}</p>
-                  </div>
-                </div> */}
+          <div>
+            <h3 className="font-script text-3xl text-secondary mb-4">
+              Mis Abuelos
+            </h3>
+            <div className="space-y-2">
+              <p className="text-xl font-medium">{grandparents.grandmother}</p>
+              <p className="text-xl font-medium">{grandparents.grandfather}</p>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-script text-3xl text-secondary mb-4">
+              Mis Padrinos
+            </h3>
+            <div className="space-y-2">
+              <p className="text-xl font-medium">{godparents.godmother}</p>
+              <p className="text-xl font-medium">{godparents.godfather}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

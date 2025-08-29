@@ -51,7 +51,7 @@ export function BasicGiftOptions() {
           {basicDemoData.gifts.message}
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* <div className="flex justify-center items-center gap-6">
           {basicDemoData.gifts.options.map((option, index) => (
             <div
               key={index}
@@ -65,7 +65,7 @@ export function BasicGiftOptions() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         
       </div>

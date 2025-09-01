@@ -189,8 +189,8 @@ export const weddingData = {
       "/audio/musica.wav"
     ],
     title: "Música de Fondo de Boda",
-    startTime: 5,        // 0:13 - Donde empieza la letra
-    endTime: 200,          // 1:25 - Final del segmento
+    startTime: 11.5,        // 0:13 - Donde empieza la letra
+    endTime: 240,          // 1:25 - Final del segmento
     volume: 0.7,          // 60% de volumen
     loop: true,           // Loop en el rango especificado
     preload: "metadata",  // Precargar solo metadatos

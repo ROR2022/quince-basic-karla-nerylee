@@ -1,84 +1,89 @@
-"use client"
+"use client";
 
-import { useState, useRef, type FormEvent } from "react"
-import { useInView } from "framer-motion"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-import { toast } from "@/components/ui/use-toast"
-import { basicDemoData } from "./data/basic-demo-data"
+import { useState, useRef, type FormEvent } from "react";
+import { useInView } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { toast } from "@/components/ui/use-toast";
+import { basicDemoData } from "./data/basic-demo-data";
 
 export function BasicAttendance() {
   //const [name, setName] = useState("")
   //const [attendance, setAttendance] = useState<string | null>(null)
   //const [companions, setCompanions] = useState("")
   //const [phone, setPhone] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    response: '',
-    companions: '',
-    phone: ''
-  })
+    name: "",
+    response: "",
+    companions: "",
+    phone: "",
+  });
   //const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
     // Validación básica
     if (!formData.name.trim() || !formData.response || !formData.phone.trim()) {
-      alert('Por favor completa todos los campos requeridos')
-      return
+      alert("Por favor completa todos los campos requeridos");
+      return;
     }
 
     // Crear mensaje para WhatsApp
-    const phoneNumber = "5213151128740" // +52 1 315 112 8740
-    let message = `¡Hola! Confirmación de asistencia:\n\n`
-    message += `👤 Nombre: ${formData.name}\n`
-    message += `📅 Respuesta: ${formData.response === 'yes' ? '✅ Sí podré asistir' : '❌ No podré asistir'}\n`
-    
-    if (formData.response === 'yes' && formData.companions.trim()) {
-      message += `👥 Acompañantes: ${formData.companions}\n`
+    const phoneNumber = "5213151128740"; // +52 1 315 112 8740
+    let message = `¡Hola! Confirmación de asistencia:\n\n`;
+    message += `👤 Nombre: ${formData.name}\n`;
+    message += `📅 Respuesta: ${
+      formData.response === "yes"
+        ? "✅ Sí podré asistir"
+        : "❌ No podré asistir"
+    }\n`;
+
+    if (formData.response === "yes" && formData.companions.trim()) {
+      message += `👥 Acompañantes: ${formData.companions}\n`;
     }
-    
-    message += `📱 Teléfono: ${formData.phone}\n\n`
-    message += `¡Gracias por confirmar! 💕`
+
+    message += `📱 Teléfono: ${formData.phone}\n\n`;
+    message += `¡Gracias por confirmar! 💕`;
 
     // Abrir WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    window.open(whatsappUrl, '_blank')
-    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+
     //setIsSubmitted(true)
     setIsSubmitting(false);
-    console.log('Datos de confirmación:', formData)
-  }
+    console.log("Datos de confirmación:", formData);
+  };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  
   return (
-    <section 
-    style={{
-        backgroundImage: `url('/images/quince/fondoDiana4.png')`,
+    <section
+      style={{
+        //backgroundImage: `url('/images/quince/fondoDiana4.png')`,
         //filter: "brightness(0.7)",
         backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundAttachment: "scroll",
-        
       }}
-    className="py-16 px-4">
+      className="py-16 px-4"
+    >
       <div
         ref={ref}
         style={{
-                backgroundColor: "#C8BFE780",
-              }}
+          backgroundColor: "#C8BFE780",
+        }}
         className={`max-w-3xl mx-auto text-center transition-all duration-1000 p-8 rounded-xl ${
           isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
@@ -86,8 +91,10 @@ export function BasicAttendance() {
         <h2 className="section-title">{basicDemoData.attendance.title}</h2>
 
         <div className="mt-4 mb-8 text-center text-slate-600">
-          <p className="text-lg">Respetuosamente</p>
-          <p className="text-lg font-medium my-2">&lt;{basicDemoData.event.restrictions}&gt;</p>
+          <p className="text-lg">Favor de Confirmar antes del evento</p>
+          <p className="text-lg font-medium my-2">
+            &lt;{basicDemoData.event.restrictions}&gt;
+          </p>
           <p className="text-lg">{basicDemoData.attendance.subtitle}</p>
         </div>
 
@@ -108,19 +115,24 @@ export function BasicAttendance() {
             </div>
 
             <div>
-              <Label className="text-base mb-2 block">{basicDemoData.attendance.fields.response}</Label>
-              <RadioGroup value={formData.response || ""} onValueChange={(value) => handleInputChange("response", value)}>
+              <Label className="text-base mb-2 block">
+                {basicDemoData.attendance.fields.response}
+              </Label>
+              <RadioGroup
+                value={formData.response || ""}
+                onValueChange={(value) => handleInputChange("response", value)}
+              >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="no" id="no" />
-                  <Label
-                  className="text-black" 
-                  htmlFor="no">{basicDemoData.attendance.fields.responseOptions.no}</Label>
+                  <Label className="text-black" htmlFor="no">
+                    {basicDemoData.attendance.fields.responseOptions.no}
+                  </Label>
                 </div>
                 <div className="flex items-center space-x-2 mt-2">
                   <RadioGroupItem value="yes" id="yes" />
-                  <Label 
-                  className="text-black" 
-                  htmlFor="yes">{basicDemoData.attendance.fields.responseOptions.yes}</Label>
+                  <Label className="text-black" htmlFor="yes">
+                    {basicDemoData.attendance.fields.responseOptions.yes}
+                  </Label>
                 </div>
               </RadioGroup>
             </div>
@@ -133,7 +145,9 @@ export function BasicAttendance() {
                 id="companions"
                 placeholder="Nombre y apellido"
                 value={formData.companions}
-                onChange={(e) => handleInputChange("companions", e.target.value)}
+                onChange={(e) =>
+                  handleInputChange("companions", e.target.value)
+                }
                 className="mt-1"
               />
             </div>
@@ -162,11 +176,9 @@ export function BasicAttendance() {
                 {isSubmitting ? "ENVIANDO..." : "ENVIAR RESPUESTA"}
               </Button>
             </div>
-
-            
           </form>
         </div>
       </div>
     </section>
-  )
-} 
+  );
+}

@@ -36,7 +36,7 @@ export const basicDemoData = {
   hero: {
     name: "Karla Nerylee",
     subtitle: "¡Mis XV años!",
-    backgroundImage: "/images/quince4.jpeg"
+    backgroundImage: "/images/quinceAzul3.png"
   },
   
   event: {
@@ -65,7 +65,7 @@ export const basicDemoData = {
       ubiLink: "https://maps.app.goo.gl/6SZogMbhKszyPsr76"
     },
     dressCode: "Formal",
-    restrictions: "No Niños"
+    restrictions: ""
   },
 
   countdown: {
@@ -75,8 +75,8 @@ export const basicDemoData = {
 
   attendance: {
     title: "CONFIRMACIÓN DE ASISTENCIA",
-    message: "Respetuosamente <No Niños>",
-    subtitle: "Espero que no sea impedimento para que ustedes puedan asistir a mi fiesta.",
+    message: "Favor de confirmar antes del evento.",
+    subtitle: "",
     fields: {
       name: "Nombre completo",
       response: "¿Podrás acompañarme?",

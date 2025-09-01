@@ -48,7 +48,7 @@ export default function WeddingInvitation() {
       <BasicCountdown />
       <ParentsSection />
       <BasicEventDetails />
-      <BasicGiftOptions />
+      {/* <BasicGiftOptions /> */}
       <BasicAttendance />
       <BasicCTA />
       

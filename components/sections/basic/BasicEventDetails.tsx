@@ -24,7 +24,7 @@ export function BasicEventDetails() {
   return (
     <section
       style={{
-        backgroundImage: `url('/images/quince/fondoDiana5.png')`,
+        //backgroundImage: `url('/images/quince/fondoDiana5.png')`,
         //filter: "brightness(0.7)",
         backgroundSize: "contain",
         backgroundPosition: "center",

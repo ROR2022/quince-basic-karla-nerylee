@@ -36,7 +36,7 @@ export const basicDemoData = {
   hero: {
     name: "Karla Nerylee",
     subtitle: "¡Mis XV años!",
-    backgroundImage: "/images/quinceAzul3.png"
+    backgroundImage: "/images/carruaje.png"
   },
   
   event: {

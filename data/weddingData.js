@@ -17,8 +17,10 @@ export const weddingData = {
       mother: "Maria Cruz Salas Ramírez"
     },
     grandparents: {
-      grandmother: "Ma. De Lourdes Ramirez Álvarez",
-      grandfather: "Francisco Contreras Nery"
+      grandmother1: "Maria de Lourdes Ramirez Álvarez",
+      grandfather1: "Francisco Nery Contreras",
+      grandmother2: "Maria García Uribe",
+      grandfather2: "Humberto Villa Guerrero"
     },
     godparents: {
       godmother: "María de Jesús Guerrero Estrada",

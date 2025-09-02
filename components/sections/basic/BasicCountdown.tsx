@@ -89,7 +89,9 @@ export function BasicCountdown() {
       <div
         className="absolute inset-0 bg-cover bg-center z-0 opacity-80"
         style={{
-          backgroundImage: `url('${basicDemoData.countdown.backgroundImage}')`,
+          backgroundImage: `linear-gradient(0deg, hsl(210 45% 78% / 0.6), hsl(210 45% 78% / 0.6)), url('${basicDemoData.countdown.backgroundImage}')`,
+          //backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('${basicDemoData.countdown.backgroundImage}')`,
+          //backgroundColor: 'lightskyblue'
         }}
       />
       <div className="absolute inset-0 bg-black/30 z-0"></div>

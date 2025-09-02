@@ -16,14 +16,15 @@ export default function ParentsSection() {
   return (
     <section
       style={{
-        backgroundImage: `url('/images/logoXV.png')`,
+        //backgroundImage: `url('/images/logoXV.png')`,
         //filter: "brightness(0.7)",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundAttachment: "scroll",
         backgroundRepeat: "no-repeat",
+        
       }}
-      className="py-16 px-4 "
+      className="py-16 px-4 bg-opacity-20"
     >
       <div
         ref={myref}
@@ -51,8 +52,10 @@ export default function ParentsSection() {
               Mis Abuelos
             </h3>
             <div className="space-y-2">
-              <p className="text-xl font-medium">{grandparents.grandmother}</p>
-              <p className="text-xl font-medium">{grandparents.grandfather}</p>
+              <p className="text-xl font-medium">{grandparents.grandmother1}</p>
+              <p className="text-xl font-medium">{grandparents.grandfather1}</p>
+              <p className="text-xl font-medium">{grandparents.grandmother2}</p>
+              <p className="text-xl font-medium">{grandparents.grandfather2}</p>
             </div>
           </div>
           <div>

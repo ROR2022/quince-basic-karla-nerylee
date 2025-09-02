@@ -98,7 +98,7 @@ export function BasicAttendance() {
           <p className="text-lg">{basicDemoData.attendance.subtitle}</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 md:p-8 mt-8">
+        <div className="bg-slate-100 rounded-lg shadow-md p-6 md:p-8 mt-8">
           <form onSubmit={handleSubmit} className="space-y-6 text-left">
             <div>
               <Label htmlFor="name" className="text-black">

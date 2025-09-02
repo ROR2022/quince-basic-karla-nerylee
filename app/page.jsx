@@ -41,9 +41,9 @@ export default function WeddingInvitation() {
   return (
     <div 
     style={{
-      background: 'linear-gradient(135deg, #f7e6e6, #e3aaaa)',
+      //background: 'linear-gradient(135deg, #f7e6e6, #e3aaaa)',
     }}
-    className="min-h-screen">
+    className="min-h-screen bg-sky-200">
       <BasicHero />
       <BasicCountdown />
       <ParentsSection />

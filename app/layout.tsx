@@ -17,7 +17,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "Karla Nerylee - Mis XV Años",
-  description: "Te invitamos a celebrar mis XV años - 27 de Septiembre 2025",
+  description: "Te invitamos a celebrar mis XV años - 19 de Diciembre 2025",
   generator: "",
 }
 
